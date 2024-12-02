@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Pizz’clean</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Pizz’clean/div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="index.html#produit">Produit</a>
+                <a href="index.html#evenement">Événement</a>
+                <a href="index.html#generateur">Générateur de lessives</a>
+                <a href="marque.html">Notre Marque</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-hero">
+        <h1>Contactez-nous</h1>
+        <p>Une question ? Un commentaire ? Écrivez-nous !</p>
+    </section>
+
+    <div class="contact-container">
+        <form class="contact-form fade-in" id="contactForm">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Sujet</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Envoyer</button>
+        </form>
+
+        <div class="contact-info fade-in">
+            <h3>Autres moyens de nous contacter</h3>
+            <p>Email : contact@pizzclean.fr</p>
+            <p>Téléphone : +33 1 23 45 67 89</p>
+            <p>Adresse : 123 Avenue des avenues, 75000 Paris</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pizza Pulita</h3>
+                <p>Innovation dans la lessive depuis 2024</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>contact@pizzapulita.fr</p>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#facebook"><img src="img/facebook.png" alt="Facebook"> </a>
+                    <a href="#twitterx"><img src="img/twitterx.png" alt="Twitter X"></a>
+                    <a href="#tiktok"><img src="img/tiktok.png" alt="Tiktok"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Construction du lien mailto
+            const mailtoLink = `mailto:contact@pizzclean.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`De: ${name}\nEmail: ${email}\n\n${message}`)}`;
+            
+            // Ouvrir le client mail par défaut
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
